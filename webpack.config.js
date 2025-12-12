@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    // clean: true
+    clean: true
   },
   mode: "development",
   devtool: "source-map",
@@ -19,7 +19,19 @@ module.exports = {
         test: /\.ts$/,
         use: "ts-loader",
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.(jpg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'imgs/',
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [

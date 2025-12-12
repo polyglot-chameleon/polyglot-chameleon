@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "ESNext",
-    "typeRoots": [],
-    "outDir": "./dist",
     "strict": true,
+    "typeRoots": [],
     "esModuleInterop": true,
-    "sourceMap": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "sourceMap": true,
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "images.d.ts"],
+  "exclude": ["node_modules"]
 }
