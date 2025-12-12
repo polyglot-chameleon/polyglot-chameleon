@@ -1,9 +1,75 @@
 import avatar from "../public/avatar.jpg";
+import "./style.css";
+
+const bio = document.createElement("section");
+bio.id = "bio";
+document.body.appendChild(bio);
 
 const img = document.createElement("img");
 img.src = avatar;
-document.body.appendChild(img);
+img.oncontextmenu = (e) => e.preventDefault();
+img.onmousedown = (e) => e.preventDefault();
+bio.appendChild(img);
 
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+const tagline = document.createElement("p");
+tagline.textContent =
+  "Fullstack Hero | NLP Guru | CogSci aficionado | Lifelong learner.";
+bio.appendChild(tagline);
+
+const SocialMediaBadges = [
+  {
+    name: "GitHub",
+    url: "https://github.com/polyglot-chameleon",
+    badge:
+      "https://img.shields.io/badge/GitHub-PolyglotChameleon-181717?style=flat&logo=github",
+  },
+  {
+    name: "GitLab",
+    url: "https://gitlab.com/polyglot-chameleon",
+    badge:
+      "https://img.shields.io/badge/GitLab-PolyglotChameleon-181717?style=flat&logo=gitlab",
+  },
+];
+
+SocialMediaBadges.forEach((platform) => {
+  const link = document.createElement("a");
+  link.href = platform.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  const badgeImg = document.createElement("img");
+  badgeImg.src = platform.badge;
+  badgeImg.alt = `${platform.name} Badge`;
+
+  link.appendChild(badgeImg);
+  bio.appendChild(link);
+});
+
+const messageSection = document.createElement("section");
+messageSection.id = "message";
+document.body.appendChild(messageSection);
+
+const span = document.createElement("span");
+span.textContent = "coming soon...";
+messageSection.appendChild(span);
+
+// const contribs = document.createElement("section");
+// contribs.id = "contribs";
+// document.body.appendChild(contribs);
+
+// const articleList = [
+//   {
+//     title: "Demystifying Transformers: A Deep Dive into Attention Mechanisms",
+//     url: "https://polyglot-chameleon.medium.com/demystifying-transformers-a-deep-dive-into-attention-mechanisms-123456789abc",
+//   },
+//   {
+//     title: "Bridging the Gap: Integrating Cognitive Science with Modern AI",
+//     url: "https://polyglot-chameleon.medium.com/bridging-the-gap-integrating-cognitive-science-with-modern-ai-abcdef123456",
+//   },
+// ];
+
+// articleList.forEach((contrib) => {
+//   const article = document.createElement("article");
+//   article.textContent = contrib.title;
+//   contribs.appendChild(article);
+// });
