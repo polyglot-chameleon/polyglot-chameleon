@@ -45,31 +45,17 @@ SocialMediaBadges.forEach((platform) => {
   bio.appendChild(link);
 });
 
-const messageSection = document.createElement("section");
-messageSection.id = "message";
-document.body.appendChild(messageSection);
+// const messageSection = document.createElement("section");
+// messageSection.id = "message";
+// document.body.appendChild(messageSection);
 
-const span = document.createElement("span");
-span.textContent = "coming soon...";
-messageSection.appendChild(span);
+// const span = document.createElement("span");
+// span.textContent = "coming soon...";
+// messageSection.appendChild(span);
 
-// const contribs = document.createElement("section");
-// contribs.id = "contribs";
-// document.body.appendChild(contribs);
+/* moving stars and planets in the background */
+import initSpace from "./space";
 
-// const articleList = [
-//   {
-//     title: "Demystifying Transformers: A Deep Dive into Attention Mechanisms",
-//     url: "https://polyglot-chameleon.medium.com/demystifying-transformers-a-deep-dive-into-attention-mechanisms-123456789abc",
-//   },
-//   {
-//     title: "Bridging the Gap: Integrating Cognitive Science with Modern AI",
-//     url: "https://polyglot-chameleon.medium.com/bridging-the-gap-integrating-cognitive-science-with-modern-ai-abcdef123456",
-//   },
-// ];
-
-// articleList.forEach((contrib) => {
-//   const article = document.createElement("article");
-//   article.textContent = contrib.title;
-//   contribs.appendChild(article);
-// });
+initSpace({
+  stars: { size: 1.3, speed: 0.05, color: "#888888" },
+});
