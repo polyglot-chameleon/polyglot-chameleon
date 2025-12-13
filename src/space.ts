@@ -42,12 +42,7 @@ export default function initSpace(options: {
     requestAnimationFrame(animate);
   }
 
-  window.addEventListener("resize", () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-  });
+  window.addEventListener("resize", () => window.location.reload());
 
   animate();
 }
