@@ -48,4 +48,16 @@ SocialMediaBadges.forEach((platform) => {
 /* moving stars and planets in the background */
 import initSpace from "./space";
 
-initSpace();
+const canvas = document.createElement("canvas");
+canvas.oncontextmenu = (e) => e.preventDefault();
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext("2d")!;
+const width = window.innerWidth;
+const height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+
+initSpace({ height, width, ctx });
+
+window.addEventListener("resize", () => initSpace({ height, width, ctx }));
