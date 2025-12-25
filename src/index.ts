@@ -45,17 +45,7 @@ SocialMediaBadges.forEach((platform) => {
   bio.appendChild(link);
 });
 
-// const messageSection = document.createElement("section");
-// messageSection.id = "message";
-// document.body.appendChild(messageSection);
-
-// const span = document.createElement("span");
-// span.textContent = "coming soon...";
-// messageSection.appendChild(span);
-
 /* moving stars and planets in the background */
 import initSpace from "./space";
 
-initSpace({
-  stars: { size: 1.3, speed: 0.05, color: "#888888" },
-});
+initSpace();
